@@ -21,6 +21,7 @@ export class ListComponent implements OnInit {
   private sortedTasks;
   private tasks: Task[] = [];
   private authorizedUser: User;
+  private isShortView: boolean = false;
 
   private subGetTasks: Subscription;
   private subQueryParams: Subscription;
@@ -83,6 +84,10 @@ export class ListComponent implements OnInit {
         default: return 0;
       }
     });
+  }
+
+  private setViewMode(val): void {
+    this.isShortView = val;
   }
 
 }

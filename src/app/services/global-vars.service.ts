@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 import { User } from '../interfaces/user';
-import 'rxjs/add/observable/interval';
 import 'rxjs/add/operator/map';
 
 @Injectable()

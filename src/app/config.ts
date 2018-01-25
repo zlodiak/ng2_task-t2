@@ -3,4 +3,5 @@ export class Config {
   static author = 'Sergey Kalinin';
   static createdDate = '2018';
   static modalDelayMs = 1500;
+  static updTasksListMs = 60000;
 }

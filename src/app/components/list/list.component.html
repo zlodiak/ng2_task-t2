@@ -1,20 +1,26 @@
-<div class="wrap">
+<div class="wrap" *ngIf="tasks.length">
+  <div class="toggler-view">
+    <div class="in all" [ngClass]="{'active': !isShortView}" (click)="setViewMode(false)">Подробно</div>
+    <div class="in short" [ngClass]="{'active': isShortView}" (click)="setViewMode(true)">Кратко</div>
+  </div>
   <table class="tasks-table" matSort (matSortChange)="sortData($event)">
     <tr>
       <th mat-sort-header="title">Заголовок</th>
-      <th mat-sort-header="createdDateUnix">Дата создания</th>
+      <th mat-sort-header="createdDateUnix" *ngIf="!isShortView">Дата создания</th>
       <th mat-sort-header="status">Статус</th>
-      <th mat-sort-header="priority">Приоритет</th>
-      <th mat-sort-header="owner">owner</th>
+      <th mat-sort-header="priority" *ngIf="!isShortView">Приоритет</th>
+      <th mat-sort-header="owner" *ngIf="!isShortView">owner</th>
     </tr>
 
     <tr *ngFor="let task of sortedTasks">
       <td>{{task.title}}</td>
-      <td>{{task.createdDateHuman}}</td>
+      <td *ngIf="!isShortView">{{task.createdDateHuman}}</td>
       <td>{{task.status}}</td>
-      <td>{{task.priority}}</td>
-      <td>{{task.owner}}</td>
+      <td *ngIf="!isShortView">{{task.priority}}</td>
+      <td *ngIf="!isShortView">{{task.owner}}</td>
     </tr>
   </table>
-
 </div>
+
+<div class="dummy" *ngIf="!tasks.length">Нет задач</div>
+
