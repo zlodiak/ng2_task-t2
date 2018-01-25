@@ -74,7 +74,7 @@ export class NewTaskComponent implements OnInit, OnDestroy {
   }
 
   private onSubmit(): void {
-    const task: Task = {
+    const task = {
       title: this.form.value.title,
       author: this.globalVarsService.getAuthorizedUser_().id,
       owner: this.form.value.owner,

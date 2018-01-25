@@ -28,7 +28,6 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { LoginComponent } from './components/login/login.component';
 import { InfoDialogComponent } from './components/info-dialog/info-dialog.component';
 import { NewTaskComponent } from './components/new-task/new-task.component';
-import { MyTasksComponent } from './components/my-tasks/my-tasks.component';
 
 
 @NgModule({
@@ -40,8 +39,7 @@ import { MyTasksComponent } from './components/my-tasks/my-tasks.component';
     RegistrationComponent,
     LoginComponent,
     InfoDialogComponent,
-    NewTaskComponent,
-    MyTasksComponent
+    NewTaskComponent
   ],
   imports: [
     MatSortModule,
