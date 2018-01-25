@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "admin@ad.ad",
+      "password": "f6fdffe48c908deb0f4c3bd36c032e72",
+      "name": "admin",
+      "city": "s2sadf",
+      "info": "we22",
+      "createdDateUnix": "1515168898.831",
+      "icon": ""
+    },
+    {
+      "id": "admin@ad.ad2",
+      "password": "f6fdffe48c908deb0f4c3bd36c032e72",
+      "name": "admin",
+      "city": "s2sadf",
+      "info": "we22",
+      "createdDateUnix": "1515168898.831",
+      "icon": ""
+    },
+    {
+      "id": "admin@ad.ad3",
+      "password": "76d80224611fc919a5d54f0ff9fba446",
+      "name": "33333",
+      "createdDateUnix": "1516894454.999"
+    }
+  ]
+}
