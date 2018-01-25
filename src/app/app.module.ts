@@ -6,13 +6,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {  MatButtonModule,
-          MatDialogModule} from '@angular/material';
+          MatDialogModule,
+          MatSnackBarModule} from '@angular/material';
 
 import { DateService } from './services/date.service';
 import { UsersService } from './services/users.service';
 import { TasksService } from './services/tasks.service';
 import { HashService } from './services/hash.service';
 import { GlobalVarsService } from './services/global-vars.service';
+import { AuthUserGuardService } from './services/auth-user-guard.service';
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -34,6 +36,7 @@ import { InfoDialogComponent } from './components/info-dialog/info-dialog.compon
     InfoDialogComponent
   ],
   imports: [
+    MatSnackBarModule,
     MatDialogModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -43,6 +46,7 @@ import { InfoDialogComponent } from './components/info-dialog/info-dialog.compon
     AppRoutingModule
   ],
   providers: [
+    AuthUserGuardService,
     DateService,
     GlobalVarsService,
     TasksService,

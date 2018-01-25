@@ -2,11 +2,14 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
+import { MatSnackBar } from '@angular/material';
 
 import { User } from '../../interfaces/user';
 import { UsersService } from '../../services/users.service';
 import { HashService } from '../../services/hash.service';
 import { GlobalVarsService } from '../../services/global-vars.service';
+
+import { Config } from '../../config';
 
 
 @Component({
@@ -19,7 +22,8 @@ export class RegistrationComponent implements OnInit {
   private form: FormGroup;
   private subCreateUser: Subscription;
 
-  constructor(private hashService: HashService,
+  constructor(private matSnackBar: MatSnackBar,
+              private hashService: HashService,
               private globalVarsService: GlobalVarsService,
               private usersService: UsersService,
               private router: Router) { }
@@ -54,6 +58,8 @@ export class RegistrationComponent implements OnInit {
     });
 
     this.globalVarsService.setVar('authorizedUser', user);
+
+    this.matSnackBar.open('Вы зарегистрировались', 'OK', {duration: Config.modalDelayMs});
   }
 
   private forbiddenEmail(control: FormControl): Promise<any> {

@@ -6,12 +6,13 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ListComponent } from './components/list/list.component';
 import { DetailsComponent } from './components/details/details.component';
+import { AuthUserGuardService } from './services/auth-user-guard.service';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
-  {path: 'list', component: ListComponent},
-  {path: 'details', component: DetailsComponent},
+  {path: '', redirectTo: '/list', pathMatch: 'full'},
+  {path: 'list', component: ListComponent, canActivate: [AuthUserGuardService]},
+  {path: 'details', component: DetailsComponent, canActivate: [AuthUserGuardService]},
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: '**', component: PageNotFoundComponent }
