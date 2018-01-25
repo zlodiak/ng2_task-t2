@@ -12,7 +12,7 @@ export class TasksService {
   constructor(private httpClient: HttpClient) { }
 
   getTasks(): Observable<any> {
-    return this.httpClient.get(Config.host + `questions`);
+    return this.httpClient.get(Config.host + `tasks`);
   }
 
 }

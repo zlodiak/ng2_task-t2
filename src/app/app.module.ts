@@ -20,6 +20,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { ListComponent } from './components/list/list.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
+import { InfoDialogComponent } from './components/info-dialog/info-dialog.component';
 
 
 @NgModule({
@@ -29,9 +30,12 @@ import { LoginComponent } from './components/login/login.component';
     DetailsComponent,
     ListComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    InfoDialogComponent
   ],
   imports: [
+    MatDialogModule,
+    BrowserAnimationsModule,
     MatButtonModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -44,6 +48,9 @@ import { LoginComponent } from './components/login/login.component';
     TasksService,
     UsersService,
     HashService
+  ],
+  entryComponents: [
+    InfoDialogComponent
   ],
   bootstrap: [AppComponent]
 })

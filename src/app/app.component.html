@@ -2,7 +2,7 @@
   <header class="header">
     <div class="header-inner inner">
       <nav class="nav">
-        <a class="link" [routerLink]="'/list'" routerLinkActive="active">Список заданий</a>
+        <!--<a class="link" [routerLink]="'/list'" routerLinkActive="active">Список заданий</a>-->
       </nav>
 
       <div class="auth">
@@ -10,7 +10,8 @@
           <div class="drop-menu" (click)="toggleMenu()" [ngClass]="{'open': isOpen}">
             <div class="title">{{ authorizedUserName }}</div>
             <div class="drop-area">
-              <div class="link" (click)="toProfile()">Профиль</div>
+              <div class="link" (click)="goTo('profile')">Профиль</div>
+              <div class="link" (click)="goTo('list')">Задания</div>
               <div class="link" (click)="logout()">Выйти</div>
             </div>
           </div>

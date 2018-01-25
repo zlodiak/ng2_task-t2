@@ -28,6 +28,7 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.authorizedUser = this.globalVarsService.getAuthorizedUser_();
+    this.getTasks();
   }
 
   ngOnDestroy() {
@@ -40,6 +41,7 @@ export class ListComponent implements OnInit {
         q['createdDateHuman'] = this.dateService.fromUnixToHuman(q['createdDateUnix']);
       });
       this.tasks = tasks;
+      console.log(this.tasks);
     });
   }
 
