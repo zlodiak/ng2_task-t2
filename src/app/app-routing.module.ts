@@ -13,7 +13,7 @@ import { NewTaskComponent } from './components/new-task/new-task.component';
 const routes: Routes = [
   {path: '', redirectTo: '/list', pathMatch: 'full'},
   {path: 'list', component: ListComponent, canActivate: [AuthUserGuardService]},
-  {path: 'details/:id_task', component: DetailsComponent, canActivate: [AuthUserGuardService]},
+  {path: 'details/:task_id', component: DetailsComponent, canActivate: [AuthUserGuardService]},
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: 'new_task', component: NewTaskComponent, canActivate: [AuthUserGuardService]},

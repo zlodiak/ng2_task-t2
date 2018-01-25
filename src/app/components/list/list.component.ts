@@ -5,9 +5,12 @@ import { Sort } from '@angular/material';
 
 import { User } from '../../interfaces/user';
 import { Task } from '../../interfaces/task';
+
 import { GlobalVarsService } from '../../services/global-vars.service';
 import { DateService } from '../../services/date.service';
 import { TasksService } from '../../services/tasks.service';
+import { UsersService } from '../../services/users.service';
+import { PriorityService } from '../../services/priority.service';
 
 
 @Component({
@@ -22,18 +25,26 @@ export class ListComponent implements OnInit {
   private tasks: Task[] = [];
   private authorizedUser: User;
   private isShortView: boolean = false;
+  private userNames: Object = {};
+  private priorityTitles: Object = {};
 
   private subGetTasks: Subscription;
   private subQueryParams: Subscription;
+  private subUsers: Subscription;
+  private subPriorities: Subscription;
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
+              private usersService: UsersService,
               private globalVarsService: GlobalVarsService,
               private tasksService: TasksService,
+              private priorityService: PriorityService,
               private dateService: DateService) { }
 
   ngOnInit() {
     this.authorizedUser = this.globalVarsService.getAuthorizedUser_();
+    this.getUsersNames();
+    this.getPriorityTitles();
     this.subQueryParams = this.activatedRoute
       .queryParams
       .subscribe(params => {
@@ -45,6 +56,8 @@ export class ListComponent implements OnInit {
   ngOnDestroy() {
     if(this.subGetTasks) { this.subGetTasks.unsubscribe(); }
     if(this.subQueryParams) { this.subQueryParams.unsubscribe(); }
+    if(this.subUsers) { this.subUsers.unsubscribe(); }
+    if(this.subPriorities) { this.subPriorities.unsubscribe(); }
   }
 
   private getTasks(): void {
@@ -78,7 +91,8 @@ export class ListComponent implements OnInit {
       switch (sort.active) {
         case 'title': return compare(a.title, b.title, isAsc);
         case 'createdDateUnix': return compare(+a.createdDateUnix, +b.createdDateUnix, isAsc);
-        case 'owner': return compare(+a.owner, +b.owner, isAsc);
+        case 'owner': return compare(this.userNames[a.owner], this.userNames[b.owner], isAsc);
+        case 'author': return compare(this.userNames[a.author], this.userNames[b.author], isAsc);
         case 'status': return compare(+a.status, +b.status, isAsc);
         case 'priority': return compare(+a.priority, +b.priority, isAsc);
         default: return 0;
@@ -86,8 +100,28 @@ export class ListComponent implements OnInit {
     });
   }
 
+  private getUsersNames(): void {
+    this.subUsers = this.usersService.getUsers().subscribe((users) => {
+      users.forEach((u) => {
+        this.userNames[u.id] = u.name;
+      });
+    });
+  }
+
+  private getPriorityTitles(): void {
+    this.subPriorities = this.priorityService.getPriorities().subscribe((titles) => {
+      titles.forEach((t) => {
+        this.priorityTitles[t.id] = t.title;
+      });
+    });
+  }
+
   private setViewMode(val): void {
     this.isShortView = val;
+  }
+
+  private openDetails(taskId): void {
+    this.router.navigate(['/details', taskId]);
   }
 
 }

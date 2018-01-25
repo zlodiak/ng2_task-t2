@@ -24,4 +24,8 @@ export class TasksService {
     return this.httpClient.post(Config.host + 'tasks', task);
   }
 
+  getTask(id: number): Observable<any> {
+    return this.httpClient.get(Config.host + `tasks/${id}`);
+  }
+
 }

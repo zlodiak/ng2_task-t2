@@ -1,0 +1,34 @@
+@import "~vars.scss";
+
+.wrap{
+
+  .btn{
+
+  }
+
+  .task-details{
+
+    .line{
+      padding-bottom: $basic-measure;
+
+      .label{
+        font-weight: bold;
+
+        &:after{
+          content: ':';
+          margin-right: $basic-measure / 4;
+        }
+      }
+
+      .value{
+
+      }
+
+      .h2{
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+    }
+
+  }
+}

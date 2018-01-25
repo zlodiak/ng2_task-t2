@@ -1,3 +1,51 @@
-<p>
-  details works!
-</p>
+<div class="wrap">
+  <button class="btn btn-common" type="button" mat-button>
+    Редактировать
+  </button>
+
+  <div class="task-details">
+    <div class="line">
+      <h2 class="h2">{{ task?.title }}</h2>
+    </div>
+
+    <div class="line">
+      <span class="label">Статус</span>
+      <span class="value">{{ task?.status }}</span>
+    </div>
+
+    <div class="line">
+      <span class="label">Приоритет</span>
+      <span class="value">{{ task?.priority }}</span>
+    </div>
+
+    <div class="line">
+      <span class="label">Дата создания</span>
+      <span class="value">{{ dateService.fromUnixToHuman(task?.createdDateUnix) }}</span>
+    </div>
+
+    <div class="line">
+      <span class="label">Планируемая дата завершения</span>
+      <span class="value">{{ task?.planningDateUnix }}</span>
+    </div>
+
+    <div class="line">
+      <span class="label">Реальная дата завершения</span>
+      <span class="value">{{ task?.dealDateUnix }}</span>
+    </div>
+
+    <div class="line">
+      <span class="label">Постановщик</span>
+      <span class="value">{{ userNames[task?.author] }}</span>
+    </div>
+
+    <div class="line">
+      <span class="label">Исполнитель</span>
+      <span class="value">{{ userNames[task?.owner] }}</span>
+    </div>
+
+    <div class="line">
+      <span class="label">Содержание</span>
+      <span class="value">{{ task?.desc }}</span>
+    </div>
+  </div>
+</div>

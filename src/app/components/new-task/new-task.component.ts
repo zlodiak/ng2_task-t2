@@ -69,7 +69,7 @@ export class NewTaskComponent implements OnInit, OnDestroy {
   private getUsers(): void {
     this.subGetUsers = this.usersService.getUsers().subscribe((users) => {
       this.users = users;
-      console.log(this.users);
+      //console.log(this.users);
     });
   }
 
