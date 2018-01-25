@@ -15,4 +15,8 @@ export class TasksService {
     return this.httpClient.get(Config.host + `tasks`);
   }
 
+  createTask(task: Task): Observable<any> {
+    return this.httpClient.post(Config.host + 'tasks', task);
+  }
+
 }

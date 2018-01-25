@@ -65,8 +65,10 @@ export class AppComponent implements OnInit, OnDestroy {
   private goTo(path): void {
     if(path === 'profile') {
       this.router.navigate(['/user/' + this.authorizedUserId]);
-    }  else {
+    }  else if(path === 'list') {
       this.router.navigate(['/list']);
+    } else if(path === 'new_task') {
+      this.router.navigate(['/new_task']);
     }
   }
 }

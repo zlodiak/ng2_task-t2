@@ -7,14 +7,16 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { ListComponent } from './components/list/list.component';
 import { DetailsComponent } from './components/details/details.component';
 import { AuthUserGuardService } from './services/auth-user-guard.service';
+import { NewTaskComponent } from './components/new-task/new-task.component';
 
 
 const routes: Routes = [
   {path: '', redirectTo: '/list', pathMatch: 'full'},
   {path: 'list', component: ListComponent, canActivate: [AuthUserGuardService]},
-  {path: 'details', component: DetailsComponent, canActivate: [AuthUserGuardService]},
+  {path: 'details/:id', component: DetailsComponent, canActivate: [AuthUserGuardService]},
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
+  {path: 'new_task', component: NewTaskComponent, canActivate: [AuthUserGuardService]},
   {path: '**', component: PageNotFoundComponent }
 ];
 

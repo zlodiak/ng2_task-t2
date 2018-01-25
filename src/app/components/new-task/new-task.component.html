@@ -1,0 +1,39 @@
+<div class="wrap">
+  <h2 class="h2">Создание задания</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="line">
+      <input class="title" id="title" placeholder="Заголовок" type="text" formControlName="title">
+    </div>
+
+    <div class="line">
+      <textarea class="desc" name="desc" id="question" desc="Текст" formControlName="desc" cols="30" rows="10"></textarea>
+    </div>
+
+    <div class="line">
+      <mat-form-field>
+        <mat-select placeholder="Приоритет" [(value)]="selectedPriority">
+          <mat-option *ngFor="let p of priorities" [value]="p.id">
+            {{ p.title }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="line">
+      <mat-form-field>
+        <mat-select placeholder="Кому назначить?" [(value)]="selectedOwner">
+          <mat-option *ngFor="let u of users" [value]="u.id">
+            {{ u.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    
+    <div class="line">
+      <button class="btn btn-common" type="submit" mat-button [disabled]="form.invalid">
+        Отправить
+      </button>
+    </div>
+  </form>
+</div>

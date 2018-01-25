@@ -3,6 +3,9 @@
     <div class="header-inner inner">
       <nav class="nav">
         <!--<a class="link" [routerLink]="'/list'" routerLinkActive="active">Список заданий</a>-->
+        <button type="button" class="btn btn-common" (click)="goTo('new_task')" mat-button *ngIf="authorizedUserId">
+          Создать задачу
+        </button>
       </nav>
 
       <div class="auth">

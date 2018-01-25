@@ -7,8 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {  MatButtonModule,
           MatDialogModule,
-          MatSnackBarModule} from '@angular/material';
+          MatSnackBarModule,
+          MatSelectModule} from '@angular/material';
 
+import { PriorityService } from './services/priority.service';
 import { DateService } from './services/date.service';
 import { UsersService } from './services/users.service';
 import { TasksService } from './services/tasks.service';
@@ -23,6 +25,7 @@ import { ListComponent } from './components/list/list.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
 import { InfoDialogComponent } from './components/info-dialog/info-dialog.component';
+import { NewTaskComponent } from './components/new-task/new-task.component';
 
 
 @NgModule({
@@ -33,9 +36,11 @@ import { InfoDialogComponent } from './components/info-dialog/info-dialog.compon
     ListComponent,
     RegistrationComponent,
     LoginComponent,
-    InfoDialogComponent
+    InfoDialogComponent,
+    NewTaskComponent
   ],
   imports: [
+    MatSelectModule,
     MatSnackBarModule,
     MatDialogModule,
     BrowserAnimationsModule,
@@ -46,6 +51,7 @@ import { InfoDialogComponent } from './components/info-dialog/info-dialog.compon
     AppRoutingModule
   ],
   providers: [
+    PriorityService,
     AuthUserGuardService,
     DateService,
     GlobalVarsService,

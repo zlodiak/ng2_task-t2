@@ -8,78 +8,71 @@
       "info": "we22",
       "createdDateUnix": "1515168898.831",
       "icon": ""
-    },
-    {
-      "id": "admin@ad.ad2",
-      "password": "76d80224611fc919a5d54f0ff9fba446",
-      "name": "222",
-      "createdDateUnix": "1516895476.307"
-    },
-    {
-      "id": "admin@ad.ad3",
-      "password": "76d80224611fc919a5d54f0ff9fba446",
-      "name": "333",
-      "createdDateUnix": "1516895628.474"
-    },
-    {
-      "id": "admin@ad.ad4",
-      "password": "76d80224611fc919a5d54f0ff9fba446",
-      "name": "333",
-      "createdDateUnix": "1516896394.639"
-    },
-    {
-      "id": "admin@ad.ad5",
-      "password": "76d80224611fc919a5d54f0ff9fba446",
-      "name": "555",
-      "createdDateUnix": "1516896638.786"
-    },
-    {
-      "id": "admin@ad.ad22",
-      "password": "76d80224611fc919a5d54f0ff9fba446",
-      "name": "22222",
-      "createdDateUnix": "1516898046.855"
-    },
-    {
-      "id": "admin@ad.ad33",
-      "password": "76d80224611fc919a5d54f0ff9fba446",
-      "name": "3333 3",
-      "createdDateUnix": "1516898089.407"
-    },
-    {
-      "id": "admin@ad.ad8",
-      "password": "76d80224611fc919a5d54f0ff9fba446",
-      "name": "8888",
-      "createdDateUnix": "1516898904.884"
-    },
-    {
-      "id": "admin@ad.ad0",
-      "password": "76d80224611fc919a5d54f0ff9fba446",
-      "name": "0000",
-      "createdDateUnix": "1516899058.666"
     }
   ],
   "tasks": [
     {
-      "id": 0,
-      "title": "qweryt",
-      "owner": "admin@ad.ad",
-      "desc": "admin",
+      "title": "ddddd",
+      "author": "admin@ad.ad",
+      "desc": "gfdfgfdg",
       "priority": 2,
-      "status": 1,
-      "createdDateUnix": "1515168898.831",
-      "planningTimeUnix": "235345",
-      "dealTimeUnix": "4233"
+      "status": 0,
+      "createdDateUnix": "1516903169.613",
+      "id": 1
+    },
+    {
+      "title": "gggggg",
+      "author": "admin@ad.ad",
+      "desc": "ddgdfgdg",
+      "priority": 2,
+      "status": 0,
+      "createdDateUnix": "1516903245.502",
+      "id": 2
+    },
+    {
+      "title": "ffffff",
+      "author": "admin@ad.ad",
+      "desc": "dssdfssdfs",
+      "priority": 1,
+      "status": 0,
+      "createdDateUnix": "1516903298.365",
+      "id": 3
+    },
+    {
+      "title": "gggg",
+      "author": "admin@ad.ad",
+      "desc": "fdfdfdg",
+      "priority": 1,
+      "status": 0,
+      "createdDateUnix": "1516903307.788",
+      "id": 4
+    },
+    {
+      "title": "dddd",
+      "author": "admin@ad.ad",
+      "desc": "sdfsfsdf",
+      "priority": 3,
+      "status": 0,
+      "createdDateUnix": "1516903438.467",
+      "id": 5
+    }
+  ],
+  "priorities": [
+    {
+      "id": 0,
+      "title": "наивысший"
     },
     {
       "id": 1,
-      "title": "qweryt1",
-      "owner": "admin@ad.ad",
-      "desc": "admidsdfn",
-      "priority": 1,
-      "status": 2,
-      "createdDateUnix": "15151688.831",
-      "planningTimeUnix": "555",
-      "dealTimeUnix": "423"
+      "title": "средний"
+    },
+    {
+      "id": 2,
+      "title": "низкий"
+    },
+    {
+      "id": 3,
+      "title": "просто забудь"
     }
   ]
 }
