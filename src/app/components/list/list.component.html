@@ -1,3 +1,20 @@
-<p>
-  list works!
-</p>
+<div class="wrap">
+  <table class="tasks-table" matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="title">Заголовок</th>
+      <th mat-sort-header="createdDateUnix">Дата создания</th>
+      <th mat-sort-header="status">Статус</th>
+      <th mat-sort-header="priority">Приоритет</th>
+      <th mat-sort-header="owner">owner</th>
+    </tr>
+
+    <tr *ngFor="let task of sortedTasks">
+      <td>{{task.title}}</td>
+      <td>{{task.createdDateHuman}}</td>
+      <td>{{task.status}}</td>
+      <td>{{task.priority}}</td>
+      <td>{{task.owner}}</td>
+    </tr>
+  </table>
+
+</div>

@@ -77,6 +77,7 @@ export class NewTaskComponent implements OnInit, OnDestroy {
     const task: Task = {
       title: this.form.value.title,
       author: this.globalVarsService.getAuthorizedUser_().id,
+      owner: this.form.value.owner,
       desc: this.form.value.desc,
       priority: this.selectedPriority,
       status: 0,

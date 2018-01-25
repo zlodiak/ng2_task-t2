@@ -2,10 +2,12 @@
   <header class="header">
     <div class="header-inner inner">
       <nav class="nav">
-        <!--<a class="link" [routerLink]="'/list'" routerLinkActive="active">Список заданий</a>-->
-        <button type="button" class="btn btn-common" (click)="goTo('new_task')" mat-button *ngIf="authorizedUserId">
-          Создать задачу
-        </button>
+        <div *ngIf="authorizedUserId">
+          <button type="button" class="btn btn-common" (click)="goTo('new_task')" mat-button>
+            Создать задачу
+          </button>
+          <a class="link" [routerLink]="'/list'" routerLinkActive="active">Список всех задач</a>
+        </div>
       </nav>
 
       <div class="auth">
@@ -14,7 +16,7 @@
             <div class="title">{{ authorizedUserName }}</div>
             <div class="drop-area">
               <div class="link" (click)="goTo('profile')">Профиль</div>
-              <div class="link" (click)="goTo('list')">Задания</div>
+              <div class="link" (click)="goTo('list')">Мои задачи</div>
               <div class="link" (click)="logout()">Выйти</div>
             </div>
           </div>

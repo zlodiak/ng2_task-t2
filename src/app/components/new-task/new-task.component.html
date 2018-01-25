@@ -3,7 +3,9 @@
 
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="line">
-      <input class="title" id="title" placeholder="Заголовок" type="text" formControlName="title">
+      <mat-form-field>
+        <input class="title" id="title" placeholder="Заголовок" type="text" formControlName="title" matInput>
+      </mat-form-field>
     </div>
 
     <div class="line">
@@ -22,7 +24,7 @@
 
     <div class="line">
       <mat-form-field>
-        <mat-select placeholder="Кому назначить?" [(value)]="selectedOwner">
+        <mat-select placeholder="Кому назначить?" [(value)]="selectedOwner" formControlName="owner">
           <mat-option *ngFor="let u of users" [value]="u.id">
             {{ u.name }}
           </mat-option>

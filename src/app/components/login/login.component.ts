@@ -44,16 +44,11 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   private onSubmit(): void {
     this.subGetUserById = this.usersService.getUserById(this.form.value.email).subscribe((user) => {
-      console.log(user);
       const passwordHash = this.hashService.generate(this.form.value.password);
 
       if(user && passwordHash === user.password) {
         this.globalVarsService.setVar('authorizedUser', user);
-        this.router.navigate(['/list'], {queryParams: {
-          authNow: true,
-          authId: user.id,
-          authName: user.name
-        }});
+        this.router.navigate(['/list'], { queryParams: { user_id: user.id } });
         this.matSnackBar.open('Вы авторизовались', 'OK', {duration: Config.modalDelayMs});
       } else {
         this.matDialog.open(InfoDialogComponent, {
