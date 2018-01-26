@@ -21,6 +21,7 @@ import { StatusService } from '../../services/status.service';
 })
 export class ListComponent implements OnInit {
 
+  private filterPhrase: string;
   private userId: string;
   private sortedTasks;
   private tasks: Task[] = [];
@@ -136,6 +137,10 @@ export class ListComponent implements OnInit {
 
   private openDetails(taskId): void {
     this.router.navigate(['/details', taskId]);
+  }
+
+  private clearFilter(): void {
+    this.filterPhrase = '';
   }
 
 }

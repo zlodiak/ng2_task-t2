@@ -1,8 +1,18 @@
 <div class="wrap" *ngIf="tasks.length">
-  <div class="toggler-view">
-    <div class="in all" [ngClass]="{'active': !isShortView}" (click)="setViewMode(false)">Подробно</div>
-    <div class="in short" [ngClass]="{'active': isShortView}" (click)="setViewMode(true)">Кратко</div>
+  <div class="controls">
+    <div class="filter">
+      <mat-form-field>
+        <input class="filter-field" id="filterField" placeholder="Фильтр по Заголовку" type="text" matInput [(ngModel)]="filterPhrase">
+      </mat-form-field>
+      <i class="material-icons md-48 md-colored close-icon" (click)="clearFilter()">close</i>
+    </div>
+
+    <div class="toggler-view">
+      <div class="in all" [ngClass]="{'active': !isShortView}" (click)="setViewMode(false)">Подробно</div>
+      <div class="in short" [ngClass]="{'active': isShortView}" (click)="setViewMode(true)">Кратко</div>
+    </div>
   </div>
+
   <table class="tasks-table" matSort (matSortChange)="sortData($event)">
     <tr>
       <th mat-sort-header="title">Заголовок</th>
@@ -13,7 +23,7 @@
       <th mat-sort-header="author" *ngIf="!isShortView">Постановщик</th>
     </tr>
 
-    <tr *ngFor="let task of sortedTasks" (click)="openDetails(task.id)">
+    <tr *ngFor="let task of sortedTasks | titleFilter:filterPhrase" (click)="openDetails(task.id)">
       <td>{{ task.title }}</td>
       <td *ngIf="!isShortView">{{task.createdDateHuman}}</td>
       <td>{{ statusTitles[task.status] }}</td>

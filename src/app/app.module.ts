@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,6 +30,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { LoginComponent } from './components/login/login.component';
 import { InfoDialogComponent } from './components/info-dialog/info-dialog.component';
 import { NewTaskComponent } from './components/new-task/new-task.component';
+import { TitleFilterPipe } from './pipes/title-filter.pipe';
 
 
 @NgModule({
@@ -40,9 +42,11 @@ import { NewTaskComponent } from './components/new-task/new-task.component';
     RegistrationComponent,
     LoginComponent,
     InfoDialogComponent,
-    NewTaskComponent
+    NewTaskComponent,
+    TitleFilterPipe
   ],
   imports: [
+    FormsModule,
     MatSortModule,
     MatInputModule,
     MatSelectModule,
