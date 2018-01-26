@@ -23,14 +23,14 @@
       <span class="value">{{ dateService.fromUnixToHuman(task?.createdDateUnix) }}</span>
     </div>
 
-    <div class="line" *ngIf="task?.planningDateUnix">
-      <span class="label">Планируемая дата завершения</span>
-      <span class="value">{{ task?.planningDateUnix }}</span>
+    <div class="line" *ngIf="task?.planningTimeHours">
+      <span class="label">Планируемое время завершения (ч)</span>
+      <span class="value">{{ task?.planningTimeHours }}</span>
     </div>
 
-    <div class="line" *ngIf="task?.dealDateUnix">
-      <span class="label">Реальная дата завершения</span>
-      <span class="value">{{ task?.dealDateUnix }}</span>
+    <div class="line" *ngIf="task?.realTimeHours">
+      <span class="label">Реальное время завершения (ч)</span>
+      <span class="value">{{ task?.realTimeHours }}</span>
     </div>
 
     <div class="line">

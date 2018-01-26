@@ -15,6 +15,7 @@ import { GlobalVarsService } from '../../services/global-vars.service';
 import { TasksService } from '../../services/tasks.service';
 import { PriorityService } from '../../services/priority.service';
 import { StatusService } from '../../services/status.service';
+import { DateService } from '../../services/date.service';
 
 
 @Component({
@@ -42,6 +43,7 @@ export class EditTaskComponent implements OnInit, OnDestroy {
               private matDialog: MatDialog,
               private tasksService: TasksService,
               private priorityService: PriorityService,
+              private dateService: DateService,
               private router: Router,
               private statusService: StatusService,
               private globalVarsService: GlobalVarsService) { }
@@ -73,6 +75,8 @@ export class EditTaskComponent implements OnInit, OnDestroy {
       desc: this.form.value.desc,
       priority: this.selectedPriority,
       status: this.selectedStatus,
+      planningTimeHours: this.form.value.planning,
+      realTimeHours: this.form.value.real,
       createdDateUnix: this.task.createdDateUnix
     };
 
@@ -98,10 +102,12 @@ export class EditTaskComponent implements OnInit, OnDestroy {
 
   private initForm(): void {
     this.form = new FormGroup({
-      'title':      new FormControl(this.task.title, [Validators.required, Validators.minLength(1)]),
-      'desc':       new FormControl(this.task.desc, [Validators.required, Validators.minLength(3)]),
-      'priority':   new FormControl(this.task.priority, Validators.required),
-      'status':     new FormControl(this.task.status, Validators.required)
+      'title':            new FormControl(this.task.title, [Validators.required, Validators.minLength(1)]),
+      'desc':             new FormControl(this.task.desc, [Validators.required, Validators.minLength(3)]),
+      'priority':         new FormControl(this.task.priority, Validators.required),
+      'status':           new FormControl(this.task.status, Validators.required),
+      'planning':         new FormControl(this.task.planningTimeHours, Validators.required),
+      'real':             new FormControl(this.task.realTimeHours)
     });
   }
 

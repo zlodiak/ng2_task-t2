@@ -6,7 +6,8 @@
           <button type="button" class="btn btn-common" (click)="goTo('new_task')" mat-button>
             Создать задачу
           </button>
-          <a class="link" [routerLink]="'/list'" routerLinkActive="active">Список всех задач</a>
+          <a class="link" [routerLink]="'/list'">Все задачи</a>
+          <span class="link"  (click)="goTo('list')">Мои задачи</span>
         </div>
       </nav>
 
@@ -15,7 +16,6 @@
           <div class="drop-menu" (click)="toggleMenu()" [ngClass]="{'open': isOpen}">
             <div class="title">{{ authorizedUserName }}</div>
             <div class="drop-area">
-              <div class="link" (click)="goTo('profile')">Профиль</div>
               <div class="link" (click)="goTo('list')">Мои задачи</div>
               <div class="link" (click)="logout()">Выйти</div>
             </div>

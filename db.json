@@ -26,6 +26,18 @@
       "password": "76d80224611fc919a5d54f0ff9fba446",
       "name": "admin4",
       "createdDateUnix": "1516914776.623"
+    },
+    {
+      "id": "admin@ad.ad9",
+      "password": "76d80224611fc919a5d54f0ff9fba446",
+      "name": "Сергей",
+      "createdDateUnix": "1516938362.295"
+    },
+    {
+      "id": "admin@ad.ad5",
+      "password": "76d80224611fc919a5d54f0ff9fba446",
+      "name": "вахтанг кикабидзе да",
+      "createdDateUnix": "1516939032.351"
     }
   ],
   "tasks": [
@@ -37,6 +49,8 @@
       "desc": "gfdfgfdg22222",
       "priority": 3,
       "status": 1,
+      "planningTimeHours": 1,
+      "realTimeHours": 6,
       "createdDateUnix": "1516903169.613"
     },
     {
@@ -130,14 +144,16 @@
       "id": 10
     },
     {
+      "id": 11,
       "title": "nnnn",
       "author": "admin@ad.ad3",
       "owner": "admin@ad.ad",
       "desc": "gjgjghj",
-      "priority": 3,
+      "priority": 2,
       "status": 0,
-      "createdDateUnix": "1516909628.132",
-      "id": 11
+      "planningTimeHours": 4,
+      "realTimeHours": 1,
+      "createdDateUnix": "1516909628.132"
     },
     {
       "title": "вёрстку добить",
@@ -160,14 +176,50 @@
       "id": 13
     },
     {
+      "id": 14,
       "title": "hgghghj",
       "author": "admin@ad.ad4",
       "owner": "admin@ad.ad",
       "desc": "jjjjjjj",
       "priority": 1,
       "status": 0,
-      "createdDateUnix": "1516915423.757",
-      "id": 14
+      "planningTimeHours": 1,
+      "realTimeHours": null,
+      "createdDateUnix": "1516915423.757"
+    },
+    {
+      "id": 15,
+      "title": "яяя2",
+      "author": "admin@ad.ad9",
+      "owner": "admin@ad.ad9",
+      "desc": "яяя",
+      "priority": 0,
+      "status": 0,
+      "planningTimeHours": 2,
+      "realTimeHours": 3,
+      "createdDateUnix": "1516938411.79"
+    },
+    {
+      "title": "авпвап",
+      "author": "admin@ad.ad9",
+      "owner": "admin@ad.ad3",
+      "desc": "вапвап",
+      "priority": 3,
+      "status": 0,
+      "createdDateUnix": "1516938458.333",
+      "id": 16
+    },
+    {
+      "id": 17,
+      "title": "купить хлеб",
+      "author": "admin@ad.ad5",
+      "owner": "admin@ad.ad9",
+      "desc": "подешевле",
+      "priority": 3,
+      "status": 0,
+      "planningTimeHours": 2,
+      "realTimeHours": 3,
+      "createdDateUnix": "1516939101.534"
     }
   ],
   "priorities": [

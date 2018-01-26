@@ -41,12 +41,18 @@
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 
 
+
+
 body{
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: helvetica, arial, sans-serif;
   font-size: 16px;
+
+  * {
+    box-sizing: content-box;
+  }
 }
 
 .btn-common{

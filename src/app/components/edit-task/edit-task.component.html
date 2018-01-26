@@ -33,6 +33,18 @@
     </div>
 
     <div class="line">
+      <mat-form-field>
+        <input class="planning" id="planning" placeholder="Планируемое время выполнения (ч)" type="number" min="1" formControlName="planning" matInput>
+      </mat-form-field>
+    </div>
+
+    <div class="line">
+      <mat-form-field>
+        <input class="real" id="real" placeholder="Реальное время выполнения (ч)" type="number" formControlName="real" matInput min="1">
+      </mat-form-field>
+    </div>
+
+    <div class="line">
       <button class="btn btn-common" type="submit" mat-button [disabled]="form.invalid">
         Отправить
       </button>

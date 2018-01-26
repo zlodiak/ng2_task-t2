@@ -2,4 +2,22 @@
 
 .line{
   padding-bottom: $basic-measure;
+
+  &.calend{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+
+    > *{
+      margin-right: $basic-measure / 2;
+    }
+
+    .form-control{
+      width: 280px;
+    }
+  }
+
+
 }

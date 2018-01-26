@@ -7,8 +7,8 @@ export interface Task {
   priority: number;
   status: number;
   createdDateUnix: number;
-  planningDateUnix?: number;
-  dealDateUnix?: number;
+  planningTimeHours?: number;
+  realTimeHours?: number;
 }
 
 

@@ -22,7 +22,12 @@
 
       .nav {
 
+        .btn, .link{
+          margin-right: $basic-measure;
+        }
+
         .link {
+          cursor: pointer;
 
           &.active {
             color: red;
