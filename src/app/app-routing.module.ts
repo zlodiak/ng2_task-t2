@@ -8,6 +8,7 @@ import { ListComponent } from './components/list/list.component';
 import { DetailsComponent } from './components/details/details.component';
 import { AuthUserGuardService } from './services/auth-user-guard.service';
 import { NewTaskComponent } from './components/new-task/new-task.component';
+import { EditTaskComponent } from './components/edit-task/edit-task.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: 'new_task', component: NewTaskComponent, canActivate: [AuthUserGuardService]},
+  {path: 'edit_task/:task_id', component: EditTaskComponent, canActivate: [AuthUserGuardService]},
   {path: '**', component: PageNotFoundComponent }
 ];
 

@@ -1,0 +1,44 @@
+<div class="wrap" *ngIf="task?.owner === authorizedUser.id">
+  <h2 class="h2">Редактирование задачи</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="line">
+      <mat-form-field>
+        <input class="title" id="title" placeholder="Заголовок" type="text" formControlName="title" matInput>
+      </mat-form-field>
+    </div>
+
+    <div class="line">
+      <textarea class="desc" name="desc" id="question" desc="Текст" formControlName="desc" cols="30" rows="10"></textarea>
+    </div>
+
+    <div class="line">
+      <mat-form-field>
+        <mat-select placeholder="Приоритет" [(value)]="selectedPriority">
+          <mat-option *ngFor="let p of priorities" [value]="p.id">
+            {{ p.title }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="line">
+      <mat-form-field>
+        <mat-select placeholder="Статус" [(value)]="selectedStatus">
+          <mat-option *ngFor="let s of statuses" [value]="s.id">
+            {{ s.title }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="line">
+      <button class="btn btn-common" type="submit" mat-button [disabled]="form.invalid">
+        Отправить
+      </button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="task?.owner !== authorizedUser.id">Доступ запрещён. Этот таск назначен не вам</div>
+

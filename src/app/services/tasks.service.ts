@@ -28,4 +28,8 @@ export class TasksService {
     return this.httpClient.get(Config.host + `tasks/${id}`);
   }
 
+  updateTask(id: number, task: Task): Observable<any> {
+    return this.httpClient.put(Config.host + `tasks/${id}`, task);
+  }
+
 }

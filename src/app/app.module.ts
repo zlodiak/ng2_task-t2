@@ -31,6 +31,7 @@ import { LoginComponent } from './components/login/login.component';
 import { InfoDialogComponent } from './components/info-dialog/info-dialog.component';
 import { NewTaskComponent } from './components/new-task/new-task.component';
 import { TitleFilterPipe } from './pipes/title-filter.pipe';
+import { EditTaskComponent } from './components/edit-task/edit-task.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { TitleFilterPipe } from './pipes/title-filter.pipe';
     LoginComponent,
     InfoDialogComponent,
     NewTaskComponent,
-    TitleFilterPipe
+    TitleFilterPipe,
+    EditTaskComponent
   ],
   imports: [
     FormsModule,

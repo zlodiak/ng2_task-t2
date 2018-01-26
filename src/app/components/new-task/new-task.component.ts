@@ -95,8 +95,6 @@ export class NewTaskComponent implements OnInit, OnDestroy {
         data: {title: 'Выполнено', message: 'Задание создано'}
       });
     });
-
-
   }
 
 }

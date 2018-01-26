@@ -1,5 +1,5 @@
 <div class="wrap">
-  <button class="btn btn-common" type="button" mat-button *ngIf="task?.owner === authorizedUserId">
+  <button class="btn btn-common" type="button" mat-button *ngIf="task?.owner === authorizedUser.id" (click)="toEditTask(task?.id)">
     Редактировать
   </button>
 

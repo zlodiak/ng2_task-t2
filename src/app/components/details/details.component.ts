@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
 import { Task } from '../../interfaces/task';
@@ -25,17 +25,16 @@ export class DetailsComponent implements OnInit, OnDestroy {
   private subTasks: Subscription;
   private subPriorities: Subscription;
   private subStatuses: Subscription;
-  private subGetAuthorizedUser: Subscription;
 
   private taskId: number;
   private task: Task;
   private userNames: Object = {};
   private priorityTitles: Object = {};
   private statusTitles: Object = {};
-  private authorizedUserId: string | boolean;
-  private authorizedUserName: string | boolean;
+  private authorizedUser: User;
 
   constructor(private activatedRoute: ActivatedRoute,
+              private router: Router,
               private tasksService: TasksService,
               private dateService: DateService,
               private statusService: StatusService,
@@ -51,12 +50,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
       this.getStatusesTitles();
     });
 
-    this.subGetAuthorizedUser = this.globalVarsService.getAuthorizedUser().subscribe(
-      (user: User) => {
-        this.authorizedUserId = user ? user.id : false;
-        this.authorizedUserName = user ? user.name : false;
-      }
-    );
+    this.authorizedUser = this.globalVarsService.getAuthorizedUser_();
   }
 
   ngOnDestroy() {
@@ -65,7 +59,6 @@ export class DetailsComponent implements OnInit, OnDestroy {
     if(this.subTasks) { this.subTasks.unsubscribe(); }
     if(this.subPriorities) { this.subPriorities.unsubscribe(); }
     if(this.subStatuses) { this.subStatuses.unsubscribe(); }
-    if(this.subGetAuthorizedUser) { this.subGetAuthorizedUser.unsubscribe(); }
   }
 
   private getUsersNames(): void {
@@ -97,6 +90,10 @@ export class DetailsComponent implements OnInit, OnDestroy {
         this.statusTitles[t.id] = t.title;
       });
     });
+  }
+
+  private toEditTask(taskId): void {
+    this.router.navigate(['/edit_task', taskId]);
   }
 
 }
