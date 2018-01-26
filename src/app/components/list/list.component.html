@@ -14,12 +14,12 @@
     </tr>
 
     <tr *ngFor="let task of sortedTasks" (click)="openDetails(task.id)">
-      <td>{{task.title}}</td>
+      <td>{{ task.title }}</td>
       <td *ngIf="!isShortView">{{task.createdDateHuman}}</td>
-      <td>{{task.status}}</td>
+      <td>{{ statusTitles[task.status] }}</td>
       <td *ngIf="!isShortView">{{priorityTitles[task.priority]}}</td>
-      <td>{{userNames[task.owner]}}</td>
-      <td *ngIf="!isShortView">{{userNames[task.author]}}</td>
+      <td>{{ userNames[task.owner] }}</td>
+      <td *ngIf="!isShortView">{{ userNames[task.author] }}</td>
     </tr>
   </table>
 </div>

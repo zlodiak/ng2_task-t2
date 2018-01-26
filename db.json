@@ -75,7 +75,7 @@
       "desc": "sdfsfsdf",
       "priority": 3,
       "owner": "admin@ad.ad2",
-      "status": 0,
+      "status": 1,
       "createdDateUnix": "1516903438.467",
       "id": 5
     },
@@ -105,7 +105,7 @@
       "owner": "admin@ad.ad2",
       "desc": "3333333",
       "priority": 3,
-      "status": 0,
+      "status": 1,
       "createdDateUnix": "1516904456.614",
       "id": 8
     },
@@ -125,7 +125,7 @@
       "owner": "admin@ad.ad3",
       "desc": "fgdffdgdfg",
       "priority": 0,
-      "status": 0,
+      "status": 2,
       "createdDateUnix": "1516909565.742",
       "id": 10
     },
@@ -145,7 +145,7 @@
       "owner": "admin@ad.ad2",
       "desc": "trdtetrt",
       "priority": 0,
-      "status": 0,
+      "status": 1,
       "createdDateUnix": "1516909640.508",
       "id": 12
     },
@@ -186,6 +186,20 @@
     {
       "id": 3,
       "title": "просто забудь"
+    }
+  ],
+  "statuses": [
+    {
+      "id": 0,
+      "title": "в планах"
+    },
+    {
+      "id": 1,
+      "title": "в процессе"
+    },
+    {
+      "id": 2,
+      "title": "готово"
     }
   ]
 }

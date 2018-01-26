@@ -12,6 +12,7 @@ import {  MatButtonModule,
           MatInputModule,
           MatSortModule} from '@angular/material';
 
+import { StatusService } from './services/status.service';
 import { PriorityService } from './services/priority.service';
 import { DateService } from './services/date.service';
 import { UsersService } from './services/users.service';
@@ -55,6 +56,7 @@ import { NewTaskComponent } from './components/new-task/new-task.component';
     AppRoutingModule
   ],
   providers: [
+    StatusService,
     PriorityService,
     AuthUserGuardService,
     DateService,

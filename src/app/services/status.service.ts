@@ -4,14 +4,13 @@ import { Observable } from 'rxjs/Observable';
 
 import { Config } from '../config';
 
-
 @Injectable()
-export class PriorityService {
+export class StatusService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getPriorities(): Observable<any> {
-    return this.httpClient.get(Config.host + `priorities`);
+  getStatuses(): Observable<any> {
+    return this.httpClient.get(Config.host + `statuses`);
   }
 
 }

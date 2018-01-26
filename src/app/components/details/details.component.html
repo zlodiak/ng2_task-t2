@@ -1,5 +1,5 @@
 <div class="wrap">
-  <button class="btn btn-common" type="button" mat-button>
+  <button class="btn btn-common" type="button" mat-button *ngIf="task?.owner === authorizedUserId">
     Редактировать
   </button>
 
@@ -10,12 +10,12 @@
 
     <div class="line">
       <span class="label">Статус</span>
-      <span class="value">{{ task?.status }}</span>
+      <span class="value">{{ statusTitles[task?.status] }}</span>
     </div>
 
     <div class="line">
       <span class="label">Приоритет</span>
-      <span class="value">{{ task?.priority }}</span>
+      <span class="value">{{ priorityTitles[task?.priority] }}</span>
     </div>
 
     <div class="line">
@@ -23,12 +23,12 @@
       <span class="value">{{ dateService.fromUnixToHuman(task?.createdDateUnix) }}</span>
     </div>
 
-    <div class="line">
+    <div class="line" *ngIf="task?.planningDateUnix">
       <span class="label">Планируемая дата завершения</span>
       <span class="value">{{ task?.planningDateUnix }}</span>
     </div>
 
-    <div class="line">
+    <div class="line" *ngIf="task?.dealDateUnix">
       <span class="label">Реальная дата завершения</span>
       <span class="value">{{ task?.dealDateUnix }}</span>
     </div>

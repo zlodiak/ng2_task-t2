@@ -11,6 +11,7 @@ import { DateService } from '../../services/date.service';
 import { TasksService } from '../../services/tasks.service';
 import { UsersService } from '../../services/users.service';
 import { PriorityService } from '../../services/priority.service';
+import { StatusService } from '../../services/status.service';
 
 
 @Component({
@@ -27,15 +28,18 @@ export class ListComponent implements OnInit {
   private isShortView: boolean = false;
   private userNames: Object = {};
   private priorityTitles: Object = {};
+  private statusTitles: Object = {};
 
   private subGetTasks: Subscription;
   private subQueryParams: Subscription;
   private subUsers: Subscription;
   private subPriorities: Subscription;
+  private subStatuses: Subscription;
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
               private usersService: UsersService,
+              private statusService: StatusService,
               private globalVarsService: GlobalVarsService,
               private tasksService: TasksService,
               private priorityService: PriorityService,
@@ -45,6 +49,7 @@ export class ListComponent implements OnInit {
     this.authorizedUser = this.globalVarsService.getAuthorizedUser_();
     this.getUsersNames();
     this.getPriorityTitles();
+    this.getStatusesTitles();
     this.subQueryParams = this.activatedRoute
       .queryParams
       .subscribe(params => {
@@ -58,6 +63,7 @@ export class ListComponent implements OnInit {
     if(this.subQueryParams) { this.subQueryParams.unsubscribe(); }
     if(this.subUsers) { this.subUsers.unsubscribe(); }
     if(this.subPriorities) { this.subPriorities.unsubscribe(); }
+    if(this.subStatuses) { this.subStatuses.unsubscribe(); }
   }
 
   private getTasks(): void {
@@ -112,6 +118,14 @@ export class ListComponent implements OnInit {
     this.subPriorities = this.priorityService.getPriorities().subscribe((titles) => {
       titles.forEach((t) => {
         this.priorityTitles[t.id] = t.title;
+      });
+    });
+  }
+
+  private getStatusesTitles(): void {
+    this.subStatuses = this.statusService.getStatuses().subscribe((titles) => {
+      titles.forEach((t) => {
+        this.statusTitles[t.id] = t.title;
       });
     });
   }
