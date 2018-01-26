@@ -13,8 +13,6 @@ import {  MatButtonModule,
           MatInputModule,
           MatSortModule} from '@angular/material';
 
-import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
-
 import { StatusService } from './services/status.service';
 import { PriorityService } from './services/priority.service';
 import { DateService } from './services/date.service';
@@ -50,7 +48,6 @@ import { EditTaskComponent } from './components/edit-task/edit-task.component';
     EditTaskComponent
   ],
   imports: [
-    NgxMyDatePickerModule.forRoot(),
     FormsModule,
     MatSortModule,
     MatInputModule,
